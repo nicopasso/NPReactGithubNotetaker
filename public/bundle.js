@@ -23594,37 +23594,70 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var RouteHandler = __webpack_require__(157).RouteHandler;
-	var SearchGithub = __webpack_require__(198);
-
-	var Main = React.createClass({
-	  displayName: 'Main',
-
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'main-container' },
-	      React.createElement(
-	        'nav',
-	        { className: 'navbar navbar-default', role: 'navigation' },
-	        React.createElement(
-	          'div',
-	          { className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } },
-	          React.createElement(SearchGithub, null)
-	        )
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'container' },
-	        React.createElement(RouteHandler, null)
-	      )
-	    );
-	  }
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
 	});
 
-	//React.render(<Main />, document.getElementById('app'));
-	module.exports = Main;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(157);
+
+	var _SearchGithub = __webpack_require__(198);
+
+	var _SearchGithub2 = _interopRequireDefault(_SearchGithub);
+
+	var Main = (function (_React$Component) {
+	  function Main() {
+	    _classCallCheck(this, Main);
+
+	    _get(Object.getPrototypeOf(Main.prototype), 'constructor', this).apply(this, arguments);
+	  }
+
+	  _inherits(Main, _React$Component);
+
+	  _createClass(Main, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'main-container' },
+	        _react2['default'].createElement(
+	          'nav',
+	          { className: 'navbar navbar-default', role: 'navigation' },
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'col-sm-7 col-sm-offset-2', style: { marginTop: 15 } },
+	            _react2['default'].createElement(_SearchGithub2['default'], null)
+	          )
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'container' },
+	          _react2['default'].createElement(_reactRouter.RouteHandler, this.props)
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Main;
+	})(_react2['default'].Component);
+
+	;
+
+	exports['default'] = Main;
+	module.exports = exports['default'];
 
 /***/ },
 /* 198 */
@@ -23632,48 +23665,81 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var Router = __webpack_require__(157);
-
-	var SearchGithub = React.createClass({
-	  displayName: 'SearchGithub',
-
-	  mixins: [Router.Navigation],
-
-	  handleSubmit: function handleSubmit() {
-	    var username = this.refs.username.getDOMNode().value;
-	    this.refs.username.getDOMNode().value = '';
-	    this.transitionTo('profile', { username: username });
-	  },
-
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'col-sm-12' },
-	      React.createElement(
-	        'form',
-	        { onSubmit: this.handleSubmit },
-	        React.createElement(
-	          'div',
-	          { className: 'form-group col-sm-7' },
-	          React.createElement('input', { type: 'text', className: 'form-control', ref: 'username' })
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'form-group col-sm-5' },
-	          React.createElement(
-	            'button',
-	            { type: 'submit', className: 'btn btn-block btn-primary' },
-	            'Search Github'
-	          )
-	        )
-	      )
-	    );
-	  }
-
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
 	});
 
-	module.exports = SearchGithub;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var SearchGithub = (function (_React$Component) {
+	  function SearchGithub() {
+	    _classCallCheck(this, SearchGithub);
+
+	    _get(Object.getPrototypeOf(SearchGithub.prototype), 'constructor', this).apply(this, arguments);
+	  }
+
+	  _inherits(SearchGithub, _React$Component);
+
+	  _createClass(SearchGithub, [{
+	    key: 'handleSubmit',
+	    value: function handleSubmit() {
+	      //With ES6 classes we cannot use Mixins, instead we can use class context
+	      var router = this.context.router;
+	      var username = this.refs.username.getDOMNode().value;
+	      this.refs.username.getDOMNode().value = '';
+	      router.transitionTo('profile', { username: username });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'col-sm-12' },
+	        _react2['default'].createElement(
+	          'form',
+	          { onSubmit: this.handleSubmit.bind(this) },
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'form-group col-sm-7' },
+	            _react2['default'].createElement('input', { type: 'text', className: 'form-control', ref: 'username' })
+	          ),
+	          _react2['default'].createElement(
+	            'div',
+	            { className: 'form-group col-sm-5' },
+	            _react2['default'].createElement(
+	              'button',
+	              { type: 'submit', className: 'btn btn-block btn-primary' },
+	              'Search Github'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SearchGithub;
+	})(_react2['default'].Component);
+
+	;
+
+	SearchGithub.contextTypes = {
+	  router: _react2['default'].PropTypes.func.isRequired
+	};
+
+	exports['default'] = SearchGithub;
+	module.exports = exports['default'];
 
 /***/ },
 /* 199 */
@@ -23681,22 +23747,51 @@
 
 	"use strict";
 
-	var React = __webpack_require__(1);
-
-	var Home = React.createClass({
-	  displayName: "Home",
-
-	  render: function render() {
-	    return React.createElement(
-	      "h2",
-	      { className: "text-center" },
-	      "Search by Github Username Above"
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 
-	//React.render(<Home />, document.getElementById('app'));
-	module.exports = Home;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Home = (function (_React$Component) {
+	  function Home() {
+	    _classCallCheck(this, Home);
+
+	    _get(Object.getPrototypeOf(Home.prototype), "constructor", this).apply(this, arguments);
+	  }
+
+	  _inherits(Home, _React$Component);
+
+	  _createClass(Home, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "h2",
+	        { className: "text-center" },
+	        "Search by Github Username Above"
+	      );
+	    }
+	  }]);
+
+	  return Home;
+	})(_react2["default"].Component);
+
+	;
+
+	exports["default"] = Home;
+	module.exports = exports["default"];
 
 /***/ },
 /* 200 */
@@ -23704,130 +23799,278 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var Router = __webpack_require__(157);
-	var UserProfile = __webpack_require__(204);
-	var Repos = __webpack_require__(205);
-	var Notes = __webpack_require__(201);
-	var ReactFireMixin = __webpack_require__(206);
-	var Firebase = __webpack_require__(207);
-	var helpers = __webpack_require__(208);
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
 
-	var Profile = React.createClass({
-	  displayName: 'Profile',
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	  mixins: [Router.State, ReactFireMixin], //mi permette di ottenere il parametro 'username' appeso alla route "profile/{username}"
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-	  getInitialState: function getInitialState() {
-	    return {
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _githubUserProfile = __webpack_require__(201);
+
+	var _githubUserProfile2 = _interopRequireDefault(_githubUserProfile);
+
+	var _githubRepos = __webpack_require__(202);
+
+	var _githubRepos2 = _interopRequireDefault(_githubRepos);
+
+	var _notesNotes = __webpack_require__(203);
+
+	var _notesNotes2 = _interopRequireDefault(_notesNotes);
+
+	var _firebase = __webpack_require__(206);
+
+	var _firebase2 = _interopRequireDefault(_firebase);
+
+	var _utilsHelpers = __webpack_require__(207);
+
+	var _utilsHelpers2 = _interopRequireDefault(_utilsHelpers);
+
+	var _reBase = __webpack_require__(227);
+
+	var _reBase2 = _interopRequireDefault(_reBase);
+
+	var base = _reBase2['default'].createClass('https://github-saver-react.firebaseio.com/');
+
+	var Profile = (function (_React$Component) {
+	  function Profile(props) {
+	    _classCallCheck(this, Profile);
+
+	    _get(Object.getPrototypeOf(Profile.prototype), 'constructor', this).call(this, props);
+
+	    this.state = {
 	      notes: [],
 	      bio: {},
 	      repos: []
 	    };
-	  },
-
-	  init: function init() {
-	    var childRef = this.ref.child(this.getParams().username); //https://github-saver-react.firebaseio.com/{username}
-	    this.bindAsArray(childRef, 'notes'); //get the data from childRef and put them into 'notes'
-
-	    helpers.getGithubInfo(this.getParams().username).then((function (dataObj) {
-	      this.setState({
-	        bio: dataObj.bio,
-	        repos: dataObj.repos
-	      });
-	    }).bind(this)); //specify the context of the new function
-	  },
-
-	  componentDidMount: function componentDidMount() {
-	    //ajax, Firebase ecc...
-	    this.ref = new Firebase('https://github-saver-react.firebaseio.com/');
-	    this.init();
-	  },
-
-	  componentWillUnmount: function componentWillUnmount() {
-	    this.unbind('notes'); //remove the listener on Firebase
-	  },
-
-	  //React Router uses this function to let me now that part of the route has changed
-	  componentWillReceiveProps: function componentWillReceiveProps() {
-	    console.log('CIAO');
-	    this.unbind('notes');
-	    this.init();
-	  },
-
-	  handleAddNote: function handleAddNote(newNote) {
-	    this.ref.child(this.getParams().username).set(this.state.notes.concat([newNote]));
-	  },
-
-	  render: function render() {
-
-	    var username = this.getParams().username;
-
-	    return React.createElement(
-	      'div',
-	      { className: 'row' },
-	      React.createElement(
-	        'div',
-	        { className: 'col-md-4' },
-	        React.createElement(UserProfile, { username: username, bio: this.state.bio })
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'col-md-4' },
-	        React.createElement(Repos, { username: username, repos: this.state.repos })
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'col-md-4' },
-	        React.createElement(Notes, {
-	          username: username,
-	          notes: this.state.notes,
-	          addNote: this.handleAddNote })
-	      )
-	    );
 	  }
-	});
 
-	module.exports = Profile;
+	  _inherits(Profile, _React$Component);
+
+	  _createClass(Profile, [{
+	    key: 'init',
+	    value: function init() {
+	      var _this = this;
+
+	      this.ref = base.bindToState(this.router.getCurrentParams().username, {
+	        context: this,
+	        asArray: true,
+	        state: 'notes'
+	      });
+
+	      _utilsHelpers2['default'].getGithubInfo(this.router.getCurrentParams().username).then(function (dataObj) {
+	        _this.setState({
+	          bio: dataObj.bio,
+	          repos: dataObj.repos
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      this.router = this.context.router;
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.init();
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      base.removeBinding(this.ref);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+
+	    //React Router uses this function to let me now that part of the route has changed
+	    value: function componentWillReceiveProps() {
+	      base.removeBinding(this.ref);
+	      this.init();
+	    }
+	  }, {
+	    key: 'handleAddNote',
+	    value: function handleAddNote(newNote) {
+	      base.post(this.router.getCurrentParams().username, {
+	        data: this.state.notes.concat([newNote])
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      var username = this.router.getCurrentParams().username;
+
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'col-md-4' },
+	          _react2['default'].createElement(_githubUserProfile2['default'], { username: username, bio: this.state.bio })
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'col-md-4' },
+	          _react2['default'].createElement(_githubRepos2['default'], { username: username, repos: this.state.repos })
+	        ),
+	        _react2['default'].createElement(
+	          'div',
+	          { className: 'col-md-4' },
+	          _react2['default'].createElement(_notesNotes2['default'], {
+	            username: username,
+	            notes: this.state.notes,
+	            addNote: this.handleAddNote.bind(this) })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Profile;
+	})(_react2['default'].Component);
+
+	;
+
+	Profile.contextTypes = {
+	  router: _react2['default'].PropTypes.func.isRequired
+	};
+
+	exports['default'] = Profile;
+	module.exports = exports['default'];
 
 /***/ },
 /* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
-	var React = __webpack_require__(1);
-	var NotesList = __webpack_require__(202);
-	var AddNote = __webpack_require__(203);
-
-	var Notes = React.createClass({
-	  displayName: 'Notes',
-
-	  propTypes: {
-	    //Validazione dei props passati dal parent
-	    username: React.PropTypes.string.isRequired,
-	    notes: React.PropTypes.array.isRequired,
-	    addNote: React.PropTypes.func.isRequired
-	  },
-
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'h3',
-	        null,
-	        ' Notes for ',
-	        this.props.username,
-	        ' '
-	      ),
-	      React.createElement(AddNote, { username: this.props.username, addNote: this.props.addNote }),
-	      React.createElement(NotesList, { notes: this.props.notes })
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 
-	module.exports = Notes;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var UserProfile = (function (_React$Component) {
+	  function UserProfile() {
+	    _classCallCheck(this, UserProfile);
+
+	    _get(Object.getPrototypeOf(UserProfile.prototype), "constructor", this).apply(this, arguments);
+	  }
+
+	  _inherits(UserProfile, _React$Component);
+
+	  _createClass(UserProfile, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2["default"].createElement(
+	        "div",
+	        null,
+	        _react2["default"].createElement(
+	          "h3",
+	          null,
+	          " User Profile "
+	        ),
+	        _react2["default"].createElement(
+	          "ul",
+	          { className: "list-group" },
+	          this.props.bio.avatar_url && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            _react2["default"].createElement("img", { src: this.props.bio.avatar_url, className: "img-thumbnail" })
+	          ),
+	          this.props.bio.name && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            "Name: ",
+	            this.props.bio.name
+	          ),
+	          this.props.bio.login && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            "Username: ",
+	            this.props.bio.login
+	          ),
+	          this.props.bio.email && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            "Email: ",
+	            this.props.bio.email
+	          ),
+	          this.props.bio.location && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            "Location: ",
+	            this.props.bio.location
+	          ),
+	          this.props.bio.company && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            "Company: ",
+	            this.props.bio.company
+	          ),
+	          this.props.bio.followers && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            "Followers: ",
+	            this.props.bio.followers
+	          ),
+	          this.props.bio.following && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            "Following: ",
+	            this.props.bio.following
+	          ),
+	          this.props.bio.blog && _react2["default"].createElement(
+	            "li",
+	            { className: "list-group-item" },
+	            "Blog: ",
+	            _react2["default"].createElement(
+	              "a",
+	              { hreh: this.props.bio.blog },
+	              this.props.bio.blog
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return UserProfile;
+	})(_react2["default"].Component);
+
+	;
+
+	UserProfile.propTypes = {
+	  //Validazione dei props passati dal parent
+	  username: _react2["default"].PropTypes.string.isRequired,
+	  bio: _react2["default"].PropTypes.object.isRequired
+	};
+
+	exports["default"] = UserProfile;
+	module.exports = exports["default"];
 
 /***/ },
 /* 202 */
@@ -23835,32 +24078,89 @@
 
 	"use strict";
 
-	var React = __webpack_require__(1);
-
-	var NoteList = React.createClass({
-	  displayName: "NoteList",
-
-	  render: function render() {
-
-	    var notes = this.props.notes.map(function (note, index) {
-	      return React.createElement(
-	        "li",
-	        { className: "list-group-item", key: index },
-	        " ",
-	        note,
-	        " "
-	      );
-	    });
-
-	    return React.createElement(
-	      "ul",
-	      { className: "list-group" },
-	      notes
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 
-	module.exports = NoteList;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var Repos = (function (_React$Component) {
+	  function Repos() {
+	    _classCallCheck(this, Repos);
+
+	    _get(Object.getPrototypeOf(Repos.prototype), "constructor", this).apply(this, arguments);
+	  }
+
+	  _inherits(Repos, _React$Component);
+
+	  _createClass(Repos, [{
+	    key: "render",
+	    value: function render() {
+
+	      var repos = this.props.repos.map(function (repo, index) {
+	        return _react2["default"].createElement(
+	          "li",
+	          { className: "list-group-item", key: index },
+	          repo.html_url && _react2["default"].createElement(
+	            "h4",
+	            null,
+	            _react2["default"].createElement(
+	              "a",
+	              { href: repo.html_url },
+	              repo.name
+	            )
+	          ),
+	          repo.description && _react2["default"].createElement(
+	            "p",
+	            null,
+	            " ",
+	            repo.description
+	          )
+	        );
+	      });
+
+	      return _react2["default"].createElement(
+	        "div",
+	        null,
+	        _react2["default"].createElement(
+	          "h3",
+	          null,
+	          " User Repos "
+	        ),
+	        _react2["default"].createElement(
+	          "ul",
+	          { className: "list-group" },
+	          repos
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Repos;
+	})(_react2["default"].Component);
+
+	;
+
+	Repos.propTypes = {
+	  //Validazione dei props passati dal parent
+	  username: _react2["default"].PropTypes.string.isRequired,
+	  repos: _react2["default"].PropTypes.array.isRequired
+	};
+
+	exports["default"] = Repos;
+	module.exports = exports["default"];
 
 /***/ },
 /* 203 */
@@ -23868,41 +24168,74 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-
-	var AddNote = React.createClass({
-	  displayName: 'AddNote',
-
-	  propTypes: {
-	    username: React.PropTypes.string.isRequired,
-	    addNote: React.PropTypes.func.isRequired
-	  },
-
-	  handleSubmit: function handleSubmit() {
-	    var newNote = this.refs.note.getDOMNode().value;
-	    this.refs.note.getDOMNode().value = '';
-	    this.props.addNote(newNote);
-	  },
-
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'input-group' },
-	      React.createElement('input', { type: 'text', className: 'form-control', ref: 'note', placeholder: 'Add New Note' }),
-	      React.createElement(
-	        'span',
-	        { className: 'input-group-btn' },
-	        React.createElement(
-	          'button',
-	          { className: 'btn btn-default', type: 'button', onClick: this.handleSubmit },
-	          ' Submit '
-	        )
-	      )
-	    );
-	  }
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
 	});
 
-	module.exports = AddNote;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NotesList = __webpack_require__(204);
+
+	var _NotesList2 = _interopRequireDefault(_NotesList);
+
+	var _AddNote = __webpack_require__(205);
+
+	var _AddNote2 = _interopRequireDefault(_AddNote);
+
+	var Notes = (function (_React$Component) {
+	  function Notes() {
+	    _classCallCheck(this, Notes);
+
+	    _get(Object.getPrototypeOf(Notes.prototype), 'constructor', this).apply(this, arguments);
+	  }
+
+	  _inherits(Notes, _React$Component);
+
+	  _createClass(Notes, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        null,
+	        _react2['default'].createElement(
+	          'h3',
+	          null,
+	          ' Notes for ',
+	          this.props.username,
+	          ' '
+	        ),
+	        _react2['default'].createElement(_AddNote2['default'], { username: this.props.username, addNote: this.props.addNote }),
+	        _react2['default'].createElement(_NotesList2['default'], { notes: this.props.notes })
+	      );
+	    }
+	  }]);
+
+	  return Notes;
+	})(_react2['default'].Component);
+
+	;
+
+	Notes.propTypes = {
+	  //Validazione dei props passati dal parent
+	  username: _react2['default'].PropTypes.string.isRequired,
+	  notes: _react2['default'].PropTypes.array.isRequired,
+	  addNote: _react2['default'].PropTypes.func.isRequired
+	};
+
+	exports['default'] = Notes;
+	module.exports = exports['default'];
 
 /***/ },
 /* 204 */
@@ -23910,325 +24243,138 @@
 
 	"use strict";
 
-	var React = __webpack_require__(1);
-
-	var UserProfile = React.createClass({
-	  displayName: "UserProfile",
-
-	  propTypes: {
-	    //Validazione dei props passati dal parent
-	    username: React.PropTypes.string.isRequired,
-	    bio: React.PropTypes.object.isRequired
-	  },
-
-	  render: function render() {
-	    return React.createElement(
-	      "div",
-	      null,
-	      React.createElement(
-	        "h3",
-	        null,
-	        " User Profile "
-	      ),
-	      React.createElement(
-	        "ul",
-	        { className: "list-group" },
-	        this.props.bio.avatar_url && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          React.createElement("img", { src: this.props.bio.avatar_url, className: "img-thumbnail" })
-	        ),
-	        this.props.bio.name && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Name: ",
-	          this.props.bio.name
-	        ),
-	        this.props.bio.login && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Username: ",
-	          this.props.bio.login
-	        ),
-	        this.props.bio.email && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Email: ",
-	          this.props.bio.email
-	        ),
-	        this.props.bio.location && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Location: ",
-	          this.props.bio.location
-	        ),
-	        this.props.bio.company && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Company: ",
-	          this.props.bio.company
-	        ),
-	        this.props.bio.followers && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Followers: ",
-	          this.props.bio.followers
-	        ),
-	        this.props.bio.following && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Following: ",
-	          this.props.bio.following
-	        ),
-	        this.props.bio.blog && React.createElement(
-	          "li",
-	          { className: "list-group-item" },
-	          "Blog: ",
-	          React.createElement(
-	            "a",
-	            { hreh: this.props.bio.blog },
-	            this.props.bio.blog
-	          )
-	        )
-	      )
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
 
-	module.exports = UserProfile;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var NoteList = (function (_React$Component) {
+	  function NoteList() {
+	    _classCallCheck(this, NoteList);
+
+	    _get(Object.getPrototypeOf(NoteList.prototype), "constructor", this).apply(this, arguments);
+	  }
+
+	  _inherits(NoteList, _React$Component);
+
+	  _createClass(NoteList, [{
+	    key: "render",
+	    value: function render() {
+
+	      var notes = this.props.notes.map(function (note, index) {
+	        return _react2["default"].createElement(
+	          "li",
+	          { className: "list-group-item", key: index },
+	          " ",
+	          note,
+	          " "
+	        );
+	      });
+
+	      return _react2["default"].createElement(
+	        "ul",
+	        { className: "list-group" },
+	        notes
+	      );
+	    }
+	  }]);
+
+	  return NoteList;
+	})(_react2["default"].Component);
+
+	;
+
+	exports["default"] = NoteList;
+	module.exports = exports["default"];
 
 /***/ },
 /* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
-	var React = __webpack_require__(1);
-
-	var Repos = React.createClass({
-	  displayName: "Repos",
-
-	  propTypes: {
-	    //Validazione dei props passati dal parent
-	    username: React.PropTypes.string.isRequired,
-	    repos: React.PropTypes.array.isRequired
-	  },
-
-	  render: function render() {
-
-	    var repos = this.props.repos.map(function (repo, index) {
-	      return React.createElement(
-	        "li",
-	        { className: "list-group-item", key: index },
-	        repo.html_url && React.createElement(
-	          "h4",
-	          null,
-	          React.createElement(
-	            "a",
-	            { href: repo.html_url },
-	            repo.name
-	          )
-	        ),
-	        repo.description && React.createElement(
-	          "p",
-	          null,
-	          " ",
-	          repo.description
-	        )
-	      );
-	    });
-
-	    return React.createElement(
-	      "div",
-	      null,
-	      React.createElement(
-	        "h3",
-	        null,
-	        " User Repos "
-	      ),
-	      React.createElement(
-	        "ul",
-	        { className: "list-group" },
-	        repos
-	      )
-	    );
-	  }
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
 	});
 
-	module.exports = Repos;
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var AddNote = (function (_React$Component) {
+	  function AddNote() {
+	    _classCallCheck(this, AddNote);
+
+	    _get(Object.getPrototypeOf(AddNote.prototype), 'constructor', this).apply(this, arguments);
+	  }
+
+	  _inherits(AddNote, _React$Component);
+
+	  _createClass(AddNote, [{
+	    key: 'handleSubmit',
+	    value: function handleSubmit() {
+	      var newNote = this.refs.note.getDOMNode().value;
+	      this.refs.note.getDOMNode().value = '';
+	      this.props.addNote(newNote);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2['default'].createElement(
+	        'div',
+	        { className: 'input-group' },
+	        _react2['default'].createElement('input', { type: 'text', className: 'form-control', ref: 'note', placeholder: 'Add New Note' }),
+	        _react2['default'].createElement(
+	          'span',
+	          { className: 'input-group-btn' },
+	          _react2['default'].createElement(
+	            'button',
+	            { className: 'btn btn-default', type: 'button', onClick: this.handleSubmit.bind(this) },
+	            ' Submit '
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return AddNote;
+	})(_react2['default'].Component);
+
+	;
+
+	AddNote.propTypes = {
+	  username: _react2['default'].PropTypes.string.isRequired,
+	  addNote: _react2['default'].PropTypes.func.isRequired
+	};
+
+	exports['default'] = AddNote;
+	module.exports = exports['default'];
 
 /***/ },
 /* 206 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * ReactFire is an open-source JavaScript library that allows you to add a
-	 * realtime data source to your React apps by providing and easy way to let
-	 * Firebase populate the state of React components.
-	 *
-	 * ReactFire 0.4.0
-	 * https://github.com/firebase/reactfire/
-	 * License: MIT
-	 */
-
-	;(function (root, factory) {
-	  "use strict";
-	  if (true) {
-	    // AMD
-	    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-	      return (root.ReactFireMixin = factory());
-	    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if (typeof exports === "object") {
-	    // CommonJS
-	    module.exports = factory();
-	  } else {
-	    // Global variables
-	    root.ReactFireMixin = factory();
-	  }
-	}(this, function() {
-	  "use strict";
-
-	var ReactFireMixin = {
-	  /********************/
-	  /*  MIXIN LIFETIME  */
-	  /********************/
-	  /* Initializes the Firebase binding refs array */
-	  componentWillMount: function() {
-	    this.firebaseRefs = {};
-	    this.firebaseListeners = {};
-	  },
-
-	  /* Removes any remaining Firebase bindings */
-	  componentWillUnmount: function() {
-	    for (var key in this.firebaseRefs) {
-	      if (this.firebaseRefs.hasOwnProperty(key)) {
-	        this.unbind(key);
-	      }
-	    }
-	  },
-
-
-	  /*************/
-	  /*  BINDING  */
-	  /*************/
-	  /* Creates a binding between Firebase and the inputted bind variable as an array */
-	  bindAsArray: function(firebaseRef, bindVar, cancelCallback) {
-	    this._bind(firebaseRef, bindVar, cancelCallback, true);
-	  },
-
-	  /* Creates a binding between Firebase and the inputted bind variable as an object */
-	  bindAsObject: function(firebaseRef, bindVar, cancelCallback) {
-	    this._bind(firebaseRef, bindVar, cancelCallback, false);
-	  },
-
-	  /* Creates a binding between Firebase and the inputted bind variable as either an array or object */
-	  _bind: function(firebaseRef, bindVar, cancelCallback, bindAsArray) {
-	    this._validateBindVar(bindVar);
-
-	    var errorMessage, errorCode;
-	    if (Object.prototype.toString.call(firebaseRef) !== "[object Object]") {
-	      errorMessage = "firebaseRef must be an instance of Firebase";
-	      errorCode = "INVALID_FIREBASE_REF";
-	    }
-	    else if (typeof bindAsArray !== "boolean") {
-	      errorMessage = "bindAsArray must be a boolean. Got: " + bindAsArray;
-	      errorCode = "INVALID_BIND_AS_ARRAY";
-	    }
-
-	    if (typeof errorMessage !== "undefined") {
-	      var error = new Error("ReactFire: " + errorMessage);
-	      error.code = errorCode;
-	      throw error;
-	    }
-
-	    this.firebaseRefs[bindVar] = firebaseRef.ref();
-	    this.firebaseListeners[bindVar] = firebaseRef.on("value", function(dataSnapshot) {
-	      var newState = {};
-	      if (bindAsArray) {
-	        newState[bindVar] = this._toArray(dataSnapshot.val());
-	      }
-	      else {
-	        newState[bindVar] = dataSnapshot.val();
-	      }
-	      this.setState(newState);
-	    }.bind(this), cancelCallback);
-	  },
-
-	  /* Removes the binding between Firebase and the inputted bind variable */
-	  unbind: function(bindVar) {
-	    this._validateBindVar(bindVar);
-
-	    if (typeof this.firebaseRefs[bindVar] === "undefined") {
-	      var error = new Error("ReactFire: unexpected value for bindVar. \"" + bindVar + "\" was either never bound or has already been unbound");
-	      error.code = "UNBOUND_BIND_VARIABLE";
-	      throw error;
-	    }
-
-	    this.firebaseRefs[bindVar].off("value", this.firebaseListeners[bindVar]);
-	    delete this.firebaseRefs[bindVar];
-	    delete this.firebaseListeners[bindVar];
-	  },
-
-
-	  /*************/
-	  /*  HELPERS  */
-	  /*************/
-	  /* Validates the name of the variable which is being bound */
-	  _validateBindVar: function(bindVar) {
-	    var errorMessage;
-
-	    if (typeof bindVar !== "string") {
-	      errorMessage = "bindVar must be a string. Got: " + bindVar;
-	    }
-	    else if (bindVar.length === 0) {
-	      errorMessage = "bindVar must be a non-empty string. Got: \"\"";
-	    }
-	    else if (bindVar.length > 768) {
-	      // Firebase can only stored child paths up to 768 characters
-	      errorMessage = "bindVar is too long to be stored in Firebase. Got: " + bindVar;
-	    }
-	    else if (/[\[\].#$\/\u0000-\u001F\u007F]/.test(bindVar)) {
-	      // Firebase does not allow node keys to contain the following characters
-	      errorMessage = "bindVar cannot contain any of the following characters: . # $ ] [ /. Got: " + bindVar;
-	    }
-
-	    if (typeof errorMessage !== "undefined") {
-	      var error = new Error("ReactFire: " + errorMessage);
-	      error.code = "INVALID_BIND_VARIABLE";
-	      throw error;
-	    }
-	  },
-
-
-	  /* Returns true if the inputted object is a JavaScript array */
-	  _isArray: function(obj) {
-	    return (Object.prototype.toString.call(obj) === "[object Array]");
-	  },
-
-	  /* Converts a Firebase object to a JavaScript array */
-	  _toArray: function(obj) {
-	    var out = [];
-	    if (obj) {
-	      if (this._isArray(obj)) {
-	        out = obj;
-	      }
-	      else if (typeof(obj) === "object") {
-	        for (var key in obj) {
-	          if (obj.hasOwnProperty(key)) {
-	            out.push(obj[key]);
-	          }
-	        }
-	      }
-	    }
-	    return out;
-	  }
-	};
-
-	  return ReactFireMixin;
-	}));
-
-/***/ },
-/* 207 */
 /***/ function(module, exports) {
 
 	/*! @license Firebase v2.2.7
@@ -24498,7 +24644,7 @@
 
 
 /***/ },
-/* 208 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//var axios = require('axios');
@@ -24510,7 +24656,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _axios = __webpack_require__(209);
+	var _axios = __webpack_require__(208);
 
 	var _axios2 = _interopRequireDefault(_axios);
 
@@ -24539,28 +24685,28 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 209 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(210);
+	module.exports = __webpack_require__(209);
 
 /***/ },
-/* 210 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var defaults = __webpack_require__(211);
-	var utils = __webpack_require__(212);
-	var deprecatedMethod = __webpack_require__(213);
-	var dispatchRequest = __webpack_require__(214);
-	var InterceptorManager = __webpack_require__(221);
+	var defaults = __webpack_require__(210);
+	var utils = __webpack_require__(211);
+	var deprecatedMethod = __webpack_require__(212);
+	var dispatchRequest = __webpack_require__(213);
+	var InterceptorManager = __webpack_require__(220);
 
 	// Polyfill ES6 Promise if needed
 	(function () {
 	  // webpack is being used to set es6-promise to the native Promise
 	  // for the standalone build. It's necessary to make sure polyfill exists.
-	  var P = __webpack_require__(222);
+	  var P = __webpack_require__(221);
 	  if (P && typeof P.polyfill === 'function') {
 	    P.polyfill();
 	  }
@@ -24623,7 +24769,7 @@
 	axios.all = function (promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(227);
+	axios.spread = __webpack_require__(226);
 
 	// Expose interceptors
 	axios.interceptors = {
@@ -24662,12 +24808,12 @@
 
 
 /***/ },
-/* 211 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(212);
+	var utils = __webpack_require__(211);
 
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -24720,7 +24866,7 @@
 
 
 /***/ },
-/* 212 */
+/* 211 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -24943,7 +25089,7 @@
 
 
 /***/ },
-/* 213 */
+/* 212 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -24971,7 +25117,7 @@
 
 
 /***/ },
-/* 214 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -24988,11 +25134,11 @@
 	    try {
 	      // For browsers use XHR adapter
 	      if (typeof window !== 'undefined') {
-	        __webpack_require__(215)(resolve, reject, config);
+	        __webpack_require__(214)(resolve, reject, config);
 	      }
 	      // For node use HTTP adapter
 	      else if (typeof process !== 'undefined') {
-	        __webpack_require__(215)(resolve, reject, config);
+	        __webpack_require__(214)(resolve, reject, config);
 	      }
 	    } catch (e) {
 	      reject(e);
@@ -25004,20 +25150,20 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 215 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	/*global ActiveXObject:true*/
 
-	var defaults = __webpack_require__(211);
-	var utils = __webpack_require__(212);
-	var buildUrl = __webpack_require__(216);
-	var cookies = __webpack_require__(217);
-	var parseHeaders = __webpack_require__(218);
-	var transformData = __webpack_require__(219);
-	var urlIsSameOrigin = __webpack_require__(220);
+	var defaults = __webpack_require__(210);
+	var utils = __webpack_require__(211);
+	var buildUrl = __webpack_require__(215);
+	var cookies = __webpack_require__(216);
+	var parseHeaders = __webpack_require__(217);
+	var transformData = __webpack_require__(218);
+	var urlIsSameOrigin = __webpack_require__(219);
 
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  // Transform request data
@@ -25116,12 +25262,12 @@
 
 
 /***/ },
-/* 216 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(212);
+	var utils = __webpack_require__(211);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -25174,12 +25320,12 @@
 
 
 /***/ },
-/* 217 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(212);
+	var utils = __webpack_require__(211);
 
 	module.exports = {
 	  write: function write(name, value, expires, path, domain, secure) {
@@ -25217,12 +25363,12 @@
 
 
 /***/ },
-/* 218 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(212);
+	var utils = __webpack_require__(211);
 
 	/**
 	 * Parse headers into an object
@@ -25257,12 +25403,12 @@
 
 
 /***/ },
-/* 219 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(212);
+	var utils = __webpack_require__(211);
 
 	/**
 	 * Transform the data for a request or a response
@@ -25282,12 +25428,12 @@
 
 
 /***/ },
-/* 220 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(212);
+	var utils = __webpack_require__(211);
 	var msie = /(msie|trident)/i.test(navigator.userAgent);
 	var urlParsingNode = document.createElement('a');
 	var originUrl;
@@ -25340,12 +25486,12 @@
 
 
 /***/ },
-/* 221 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(212);
+	var utils = __webpack_require__(211);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -25398,7 +25544,7 @@
 
 
 /***/ },
-/* 222 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, setImmediate, global, module) {/*!
@@ -25537,7 +25683,7 @@
 	    function lib$es6$promise$asap$$attemptVertex() {
 	      try {
 	        var r = require;
-	        var vertx = __webpack_require__(225);
+	        var vertx = __webpack_require__(224);
 	        lib$es6$promise$asap$$vertxNext = vertx.runOnLoop || vertx.runOnContext;
 	        return lib$es6$promise$asap$$useVertxTimer();
 	      } catch(e) {
@@ -26362,7 +26508,7 @@
 	    };
 
 	    /* global define:true module:true window: true */
-	    if ("function" === 'function' && __webpack_require__(226)['amd']) {
+	    if ("function" === 'function' && __webpack_require__(225)['amd']) {
 	      !(__WEBPACK_AMD_DEFINE_RESULT__ = function() { return lib$es6$promise$umd$$ES6Promise; }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof module !== 'undefined' && module['exports']) {
 	      module['exports'] = lib$es6$promise$umd$$ES6Promise;
@@ -26374,10 +26520,10 @@
 	}).call(this);
 
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(223).setImmediate, (function() { return this; }()), __webpack_require__(224)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(222).setImmediate, (function() { return this; }()), __webpack_require__(223)(module)))
 
 /***/ },
-/* 223 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(3).nextTick;
@@ -26456,10 +26602,10 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(223).setImmediate, __webpack_require__(223).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(222).setImmediate, __webpack_require__(222).clearImmediate))
 
 /***/ },
-/* 224 */
+/* 223 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -26475,20 +26621,20 @@
 
 
 /***/ },
-/* 225 */
+/* 224 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 226 */
+/* 225 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 227 */
+/* 226 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -26519,6 +26665,354 @@
 	  };
 	};
 
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(228);
+
+
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	(function webpackUniversalModuleDefinition(root, factory) {
+		if(true)
+			module.exports = factory(__webpack_require__(206));
+		else if(typeof define === 'function' && define.amd)
+			define(["firebase"], factory);
+		else {
+			var a = typeof exports === 'object' ? factory(require("firebase")) : factory(root["Firebase"]);
+			for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+		}
+	})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
+	return /******/ (function(modules) { // webpackBootstrap
+	/******/ 	// The module cache
+	/******/ 	var installedModules = {};
+
+	/******/ 	// The require function
+	/******/ 	function __webpack_require__(moduleId) {
+
+	/******/ 		// Check if module is in cache
+	/******/ 		if(installedModules[moduleId])
+	/******/ 			return installedModules[moduleId].exports;
+
+	/******/ 		// Create a new module (and put it into the cache)
+	/******/ 		var module = installedModules[moduleId] = {
+	/******/ 			exports: {},
+	/******/ 			id: moduleId,
+	/******/ 			loaded: false
+	/******/ 		};
+
+	/******/ 		// Execute the module function
+	/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+	/******/ 		// Flag the module as loaded
+	/******/ 		module.loaded = true;
+
+	/******/ 		// Return the exports of the module
+	/******/ 		return module.exports;
+	/******/ 	}
+
+
+	/******/ 	// expose the modules object (__webpack_modules__)
+	/******/ 	__webpack_require__.m = modules;
+
+	/******/ 	// expose the module cache
+	/******/ 	__webpack_require__.c = installedModules;
+
+	/******/ 	// __webpack_public_path__
+	/******/ 	__webpack_require__.p = "";
+
+	/******/ 	// Load entry module and return exports
+	/******/ 	return __webpack_require__(0);
+	/******/ })
+	/************************************************************************/
+	/******/ ([
+	/* 0 */
+	/***/ function(module, exports, __webpack_require__) {
+
+		'use strict';
+
+		function _defineProperty(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); }
+
+		module.exports = (function () {
+		  var Firebase = __webpack_require__(1);
+
+		  var baseUrl = '';
+		  var rebase;
+		  var firebaseRefs = {};
+		  var firebaseListeners = {};
+
+		  var optionValidators = {
+		    notObject: function notObject(options) {
+		      if (!_isObject(options)) {
+		        _throwError('The options argument must be an object. Instead, got ' + options, 'INVALID_OPTIONS');
+		      }
+		    },
+		    context: function context(options) {
+		      this.notObject(options);
+		      if (!options.context || !_isObject(options.context)) {
+		        this.makeError('context', 'object', options.context);
+		      }
+		    },
+		    state: function state(options) {
+		      this.notObject(options);
+		      if (!options.state || typeof options.state !== 'string') {
+		        this.makeError('state', 'string', options.state);
+		      }
+		    },
+		    then: function then(options) {
+		      this.notObject(options);
+		      if (typeof options.then === 'undefined' || typeof options.then !== 'function') {
+		        this.makeError('then', 'function', options.then);
+		      }
+		    },
+		    data: function data(options) {
+		      this.notObject(options);
+		      if (typeof options.data === 'undefined') {
+		        this.makeError('data', 'ANY', options.data);
+		      }
+		    },
+		    makeError: function makeError(prop, type, actual) {
+		      _throwError('The options argument must contain a ' + prop + ' property of type ' + type + '. Instead, got ' + actual, 'INVALID_OPTIONS');
+		    }
+		  };
+
+		  function _toArray(obj) {
+		    var arr = [];
+		    for (var key in obj) {
+		      if (_isObject(obj[key])) {
+		        obj[key].key = key;
+		      }
+		      arr.push(obj[key]);
+		    }
+		    return arr;
+		  };
+
+		  function _isObject(obj) {
+		    return Object.prototype.toString.call(obj) === '[object Object]' ? true : false;
+		  };
+
+		  function _throwError(msg, code) {
+		    var err = new Error('REBASE: ' + msg);
+		    err.code = code;
+		    throw err;
+		  };
+
+		  function _validateBaseURL(url) {
+		    var defaultError = 'Rebase.createClass failed.';
+		    var errorMsg;
+		    if (typeof url !== 'string') {
+		      errorMsg = '' + defaultError + ' URL must be a string.';
+		    } else if (!url || arguments.length > 1) {
+		      errorMsg = '' + defaultError + ' Was called with more or less than 1 argument. Expects 1.';
+		    } else if (url.length === '') {
+		      errorMsg = '' + defaultError + ' URL cannot be an empty string.';
+		    } else if (url.indexOf('.firebaseio.com') === -1) {
+		      errorMsg = '' + defaultError + ' URL must be in the format of https://<YOUR FIREBASE>.firebaseio.com. Instead, got ' + url + '.';
+		    }
+
+		    if (typeof errorMsg !== 'undefined') {
+		      _throwError(errorMsg, 'INVALID_URL');
+		    }
+		  };
+
+		  function _validateEndpoint(endpoint) {
+		    var defaultError = 'The Firebase endpoint you are trying to listen to';
+		    var errorMsg;
+		    if (typeof endpoint !== 'string') {
+		      errorMsg = '' + defaultError + ' must be a string. Instead, got ' + endpoint;
+		    } else if (endpoint.length === 0) {
+		      errorMsg = '' + defaultError + ' must be a non-empty string. Instead, got ' + endpoint;
+		    } else if (endpoint.length > 768) {
+		      errorMsg = '' + defaultError + ' is too long to be stored in Firebase. It be less than 768 characters.';
+		    } else if (/^$|[\[\]\.\#\$]/.test(endpoint)) {
+		      errorMsg = '' + defaultError + ' in invalid. Paths must be non-empty strings and can\'t contain ".", "#", "$", "[", or "]".';
+		    }
+
+		    if (typeof errorMsg !== 'undefined') {
+		      _throwError(errorMsg, 'INVALID_ENDPOINT');
+		    }
+		  };
+
+		  function _setState(newState) {
+		    this.setState(newState);
+		  };
+
+		  function _returnRef(endpoint, method) {
+		    return { endpoint: endpoint, method: method };
+		  };
+
+		  function _fetch(endpoint, options) {
+		    _validateEndpoint(endpoint);
+		    optionValidators.context(options);
+		    optionValidators.then(options);
+		    var ref = new Firebase('' + baseUrl + '/' + endpoint);
+		    ref.once('value', function (snapshot) {
+		      var data = options.asArray === true ? _toArray(snapshot.val()) : snapshot.val();
+		      options.then.call(options.context, data);
+		    });
+		  };
+
+		  function _firebaseRefsMixin(endpoint, invoker, ref) {
+		    if (!_isObject(firebaseRefs[endpoint])) {
+		      firebaseRefs[endpoint] = _defineProperty({}, invoker, ref.ref());
+		      firebaseListeners[endpoint] = {};
+		    } else if (!firebaseRefs[endpoint][invoker]) {
+		      firebaseRefs[endpoint][invoker] = ref.ref();
+		    } else {
+		      _throwError('Endpoint (' + endpoint + ') already has listener ' + invoker, 'INVALID_ENDPOINT');
+		    }
+		    return true;
+		  };
+
+		  function _addListener(endpoint, invoker, options, ref) {
+		    firebaseListeners[endpoint][invoker] = ref.on('value', function (snapshot) {
+		      var data = snapshot.val() || (options.asArray === true ? [] : {});
+		      if (invoker === 'listenTo') {
+		        options.asArray === true ? options.then.call(options.context, _toArray(data)) : options.then.call(options.context, data);
+		      } else if (invoker === 'syncState') {
+		        data = options.asArray === true ? _toArray(data) : data;
+		        options.reactSetState.call(options.context, _defineProperty({}, options.state, data));
+		      } else if (invoker === 'bindToState') {
+		        var newState = {};
+		        options.asArray === true ? newState[options.state] = _toArray(data) : newState[options.state] = data;
+		        _setState.call(options.context, newState);
+		      }
+		    });
+		  };
+
+		  function _bind(endpoint, options, invoker) {
+		    _validateEndpoint(endpoint);
+		    optionValidators.context(options);
+		    invoker === 'listenTo' && optionValidators.then(options);
+		    invoker === 'bindToState' && optionValidators.state(options);
+		    var ref = new Firebase('' + baseUrl + '/' + endpoint);
+		    _firebaseRefsMixin(endpoint, invoker, ref) && _addListener(endpoint, invoker, options, ref);
+		    return _returnRef(endpoint, invoker);
+		  };
+
+		  function _sync(endpoint, options) {
+		    _validateEndpoint(endpoint);
+		    optionValidators.context(options);
+		    optionValidators.state(options);
+		    var context = options.context;
+		    options.reactSetState = context.setState;
+		    var ref = new Firebase('' + baseUrl + '/' + endpoint);
+		    _firebaseRefsMixin(endpoint, 'syncState', ref) && _addListener(endpoint, 'syncState', options, ref);
+
+		    function _updateSyncState(ref, data, key) {
+		      if (_isObject(data)) {
+		        for (var prop in data) {
+		          _updateSyncState(ref.child(prop), data[prop], prop);
+		        }
+		      } else {
+		        ref.set(data);
+		      }
+		    };
+
+		    context.setState = function (data) {
+		      for (var key in data) {
+		        if (key === options.state) {
+		          _updateSyncState(ref.child(endpoint), data[key], key);
+		        } else {
+		          options.reactSetState.call(options.context, data);
+		        }
+		      }
+		    };
+		    return _returnRef(endpoint, 'syncState');
+		  };
+
+		  function _post(endpoint, options) {
+		    _validateEndpoint(endpoint);
+		    optionValidators.data(options);
+		    var ref = new Firebase('' + baseUrl + '/' + endpoint);
+		    if (options.then) {
+		      ref.set(options.data, options.then);
+		    } else {
+		      ref.set(options.data);
+		    }
+		  }
+
+		  function _removeBinding(refObj) {
+		    _validateEndpoint(refObj.endpoint);
+		    if (typeof firebaseRefs[refObj.endpoint][refObj.method] === 'undefined') {
+		      var errorMsg = 'Unexpected value for endpoint. ' + refObj.endpoint + ' was either never bound or has already been unbound.';
+		      _throwError(errorMsg, 'UNBOUND_ENDPOINT_VARIABLE');
+		    }
+		    firebaseRefs[refObj.endpoint][refObj.method].off('value', firebaseListeners[refObj.endpoint][refObj.method]);
+		    delete firebaseRefs[refObj.endpoint][refObj.method];
+		    delete firebaseListeners[refObj.endpoint][refObj.method];
+		  };
+
+		  function _reset() {
+		    baseUrl = '';
+		    rebase = undefined;
+		    for (var key in firebaseRefs) {
+		      for (var prop in firebaseRefs[key]) {
+		        firebaseRefs[key][prop].off('value', firebaseListeners[key][prop]);
+		        delete firebaseRefs[key][prop];
+		        delete firebaseListeners[key][prop];
+		      }
+		    }
+		    firebaseRefs = {};
+		    firebaseListeners = {};
+		  }
+
+		  function init() {
+		    return {
+		      listenTo: function listenTo(endpoint, options) {
+		        return _bind(endpoint, options, 'listenTo');
+		      },
+		      bindToState: function bindToState(endpoint, options) {
+		        return _bind(endpoint, options, 'bindToState');
+		      },
+		      syncState: function syncState(endpoint, options) {
+		        return _sync(endpoint, options);
+		      },
+		      fetch: function fetch(endpoint, options) {
+		        _fetch(endpoint, options);
+		      },
+		      post: function post(endpoint, options) {
+		        _post(endpoint, options);
+		      },
+		      removeBinding: function removeBinding(endpoint) {
+		        _removeBinding(endpoint, true);
+		      },
+		      reset: function reset() {
+		        _reset();
+		      }
+		    };
+		  }
+
+		  return {
+		    createClass: function createClass(url) {
+		      if (rebase) {
+		        return rebase;
+		      }
+
+		      _validateBaseURL(url);
+		      baseUrl = url;
+		      rebase = init();
+
+		      return rebase;
+		    }
+		  };
+		})();
+
+	/***/ },
+	/* 1 */
+	/***/ function(module, exports, __webpack_require__) {
+
+		module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+
+	/***/ }
+	/******/ ])
+	});
+	;
 
 /***/ }
 /******/ ]);

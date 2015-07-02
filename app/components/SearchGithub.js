@@ -1,19 +1,19 @@
-var React = require('react');
-var Router = require('react-router');
+import React from 'react';
 
-var SearchGithub = React.createClass({
-  mixins: [Router.Navigation],
+class SearchGithub extends React.Component {
 
-  handleSubmit: function() {
+  handleSubmit() {
+    //With ES6 classes we cannot use Mixins, instead we can use class context
+    var router = this.context.router;
     var username = this.refs.username.getDOMNode().value;
     this.refs.username.getDOMNode().value = '';
-    this.transitionTo('profile', {username: username});
-  },
+    router.transitionTo('profile', {username: username});
+  }
 
-  render: function() {
+  render() {
     return (
       <div className="col-sm-12">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <div className="form-group col-sm-7">
             <input type="text" className="form-control" ref="username" />
           </div>
@@ -22,9 +22,12 @@ var SearchGithub = React.createClass({
           </div>
         </form>
       </div>
-    );
+    )
   }
+};
 
-});
+SearchGithub.contextTypes = {
+  router: React.PropTypes.func.isRequired
+};
 
-module.exports = SearchGithub;
+export default SearchGithub;
