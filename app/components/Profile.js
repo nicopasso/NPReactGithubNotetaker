@@ -5,6 +5,7 @@ var Repos = require('./github/Repos');
 var Notes = require('./notes/Notes');
 var ReactFireMixin = require('reactfire');
 var Firebase = require('firebase');
+var helpers = require('../utils/helpers');
 
 
 var Profile = React.createClass({
@@ -14,8 +15,8 @@ var Profile = React.createClass({
   getInitialState: function() {
     return {
       notes: [],
-      bio: {name: 'Nico'},
-      repos: ['repo1', 'repo2', 'repo3']
+      bio: {},
+      repos: []
     }
   },
 
@@ -24,6 +25,14 @@ var Profile = React.createClass({
     this.ref = new Firebase('https://github-saver-react.firebaseio.com/');
     var childRef = this.ref.child(this.getParams().username); //https://github-saver-react.firebaseio.com/{username}
     this.bindAsArray(childRef, 'notes'); //prende i dati da childRef e li mette in notes
+
+    helpers.getGithubInfo(this.getParams().username)
+      .then(function(dataObj) {
+        this.setState({
+          bio: dataObj.bio,
+          repos: dataObj.repos
+        });
+      }.bind(this)); //specify the context of the new function
   },
 
   componentWillUnmount: function() {
