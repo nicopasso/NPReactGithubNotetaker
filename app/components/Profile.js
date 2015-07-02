@@ -20,11 +20,9 @@ var Profile = React.createClass({
     }
   },
 
-  componentDidMount: function() {
-    //ajax, Firebase ecc...
-    this.ref = new Firebase('https://github-saver-react.firebaseio.com/');
+  init: function(){
     var childRef = this.ref.child(this.getParams().username); //https://github-saver-react.firebaseio.com/{username}
-    this.bindAsArray(childRef, 'notes'); //prende i dati da childRef e li mette in notes
+    this.bindAsArray(childRef, 'notes'); //get the data from childRef and put them into 'notes'
 
     helpers.getGithubInfo(this.getParams().username)
       .then(function(dataObj) {
@@ -35,8 +33,21 @@ var Profile = React.createClass({
       }.bind(this)); //specify the context of the new function
   },
 
+  componentDidMount: function() {
+    //ajax, Firebase ecc...
+    this.ref = new Firebase('https://github-saver-react.firebaseio.com/');
+    this.init();
+  },
+
   componentWillUnmount: function() {
     this.unbind('notes'); //remove the listener on Firebase
+  },
+
+  //React Router uses this function to let me now that part of the route has changed
+  componentWillReceiveProps: function() {
+    console.log('CIAO');
+    this.unbind('notes');
+    this.init();
   },
 
   handleAddNote: function(newNote) {

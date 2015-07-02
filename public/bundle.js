@@ -46,12 +46,22 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var Router = __webpack_require__(157);
-	var routes = __webpack_require__(196);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	Router.run(routes, function (Root) {
-	  React.render(React.createElement(Root, null), document.getElementById('app'));
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(157);
+
+	var _reactRouter2 = _interopRequireDefault(_reactRouter);
+
+	var _configRoutes = __webpack_require__(196);
+
+	var _configRoutes2 = _interopRequireDefault(_configRoutes);
+
+	_reactRouter2['default'].run(_configRoutes2['default'], function (Root, state) {
+	  _react2['default'].render(_react2['default'].createElement(Root, state), document.getElementById('app'));
 	});
 
 /***/ },
@@ -23546,20 +23556,37 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var Main = __webpack_require__(197);
-	var Home = __webpack_require__(199);
-	var Profile = __webpack_require__(200);
-	var Router = __webpack_require__(157);
-	var DefaultRoute = Router.DefaultRoute;
-	var Route = Router.Route;
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
 
-	module.exports = React.createElement(
-	  Route,
-	  { name: 'app', path: '/', handler: Main },
-	  React.createElement(Route, { name: 'profile', path: 'profile/:username', handler: Profile }),
-	  React.createElement(DefaultRoute, { handler: Home })
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _componentsMain = __webpack_require__(197);
+
+	var _componentsMain2 = _interopRequireDefault(_componentsMain);
+
+	var _componentsHome = __webpack_require__(199);
+
+	var _componentsHome2 = _interopRequireDefault(_componentsHome);
+
+	var _componentsProfile = __webpack_require__(200);
+
+	var _componentsProfile2 = _interopRequireDefault(_componentsProfile);
+
+	var _reactRouter = __webpack_require__(157);
+
+	exports['default'] = _react2['default'].createElement(
+	  _reactRouter.Route,
+	  { name: 'app', path: '/', handler: _componentsMain2['default'] },
+	  _react2['default'].createElement(_reactRouter.Route, { name: 'profile', path: 'profile/:username', handler: _componentsProfile2['default'] }),
+	  _react2['default'].createElement(_reactRouter.DefaultRoute, { handler: _componentsHome2['default'] })
 	);
+	module.exports = exports['default'];
 
 /***/ },
 /* 197 */
@@ -23614,8 +23641,8 @@
 	  mixins: [Router.Navigation],
 
 	  handleSubmit: function handleSubmit() {
-	    var username = this.refs.username.getDOMNode.value;
-	    this.refs.username.getDOMNode.value = '';
+	    var username = this.refs.username.getDOMNode().value;
+	    this.refs.username.getDOMNode().value = '';
 	    this.transitionTo('profile', { username: username });
 	  },
 
@@ -23699,11 +23726,9 @@
 	    };
 	  },
 
-	  componentDidMount: function componentDidMount() {
-	    //ajax, Firebase ecc...
-	    this.ref = new Firebase('https://github-saver-react.firebaseio.com/');
+	  init: function init() {
 	    var childRef = this.ref.child(this.getParams().username); //https://github-saver-react.firebaseio.com/{username}
-	    this.bindAsArray(childRef, 'notes'); //prende i dati da childRef e li mette in notes
+	    this.bindAsArray(childRef, 'notes'); //get the data from childRef and put them into 'notes'
 
 	    helpers.getGithubInfo(this.getParams().username).then((function (dataObj) {
 	      this.setState({
@@ -23713,8 +23738,21 @@
 	    }).bind(this)); //specify the context of the new function
 	  },
 
+	  componentDidMount: function componentDidMount() {
+	    //ajax, Firebase ecc...
+	    this.ref = new Firebase('https://github-saver-react.firebaseio.com/');
+	    this.init();
+	  },
+
 	  componentWillUnmount: function componentWillUnmount() {
 	    this.unbind('notes'); //remove the listener on Firebase
+	  },
+
+	  //React Router uses this function to let me now that part of the route has changed
+	  componentWillReceiveProps: function componentWillReceiveProps() {
+	    console.log('CIAO');
+	    this.unbind('notes');
+	    this.init();
 	  },
 
 	  handleAddNote: function handleAddNote(newNote) {
@@ -23870,12 +23908,12 @@
 /* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(1);
 
 	var UserProfile = React.createClass({
-	  displayName: 'UserProfile',
+	  displayName: "UserProfile",
 
 	  propTypes: {
 	    //Validazione dei props passati dal parent
@@ -23885,16 +23923,74 @@
 
 	  render: function render() {
 	    return React.createElement(
-	      'div',
+	      "div",
 	      null,
-	      'User Profile ',
-	      React.createElement('br', null),
-	      'Username: ',
-	      this.props.username,
-	      ' ',
-	      React.createElement('br', null),
-	      'Bio: ',
-	      this.props.bio
+	      React.createElement(
+	        "h3",
+	        null,
+	        " User Profile "
+	      ),
+	      React.createElement(
+	        "ul",
+	        { className: "list-group" },
+	        this.props.bio.avatar_url && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          React.createElement("img", { src: this.props.bio.avatar_url, className: "img-thumbnail" })
+	        ),
+	        this.props.bio.name && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          "Name: ",
+	          this.props.bio.name
+	        ),
+	        this.props.bio.login && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          "Username: ",
+	          this.props.bio.login
+	        ),
+	        this.props.bio.email && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          "Email: ",
+	          this.props.bio.email
+	        ),
+	        this.props.bio.location && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          "Location: ",
+	          this.props.bio.location
+	        ),
+	        this.props.bio.company && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          "Company: ",
+	          this.props.bio.company
+	        ),
+	        this.props.bio.followers && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          "Followers: ",
+	          this.props.bio.followers
+	        ),
+	        this.props.bio.following && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          "Following: ",
+	          this.props.bio.following
+	        ),
+	        this.props.bio.blog && React.createElement(
+	          "li",
+	          { className: "list-group-item" },
+	          "Blog: ",
+	          React.createElement(
+	            "a",
+	            { hreh: this.props.bio.blog },
+	            this.props.bio.blog
+	          )
+	        )
+	      )
 	    );
 	  }
 	});
@@ -23905,12 +24001,12 @@
 /* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(1);
 
 	var Repos = React.createClass({
-	  displayName: 'Repos',
+	  displayName: "Repos",
 
 	  propTypes: {
 	    //Validazione dei props passati dal parent
@@ -23919,17 +24015,42 @@
 	  },
 
 	  render: function render() {
+
+	    var repos = this.props.repos.map(function (repo, index) {
+	      return React.createElement(
+	        "li",
+	        { className: "list-group-item", key: index },
+	        repo.html_url && React.createElement(
+	          "h4",
+	          null,
+	          React.createElement(
+	            "a",
+	            { href: repo.html_url },
+	            repo.name
+	          )
+	        ),
+	        repo.description && React.createElement(
+	          "p",
+	          null,
+	          " ",
+	          repo.description
+	        )
+	      );
+	    });
+
 	    return React.createElement(
-	      'div',
+	      "div",
 	      null,
-	      'User Profile ',
-	      React.createElement('br', null),
-	      'Username: ',
-	      this.props.username,
-	      ' ',
-	      React.createElement('br', null),
-	      'Repos: ',
-	      this.props.repos
+	      React.createElement(
+	        "h3",
+	        null,
+	        " User Repos "
+	      ),
+	      React.createElement(
+	        "ul",
+	        { className: "list-group" },
+	        repos
+	      )
 	    );
 	  }
 	});
@@ -24380,21 +24501,31 @@
 /* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
+	//var axios = require('axios');
 	'use strict';
 
-	var axios = __webpack_require__(209);
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _axios = __webpack_require__(209);
+
+	var _axios2 = _interopRequireDefault(_axios);
 
 	function getRepos(username) {
-	  return axios.get('https://api.github.com/users/' + username + '/repos');
+	  return _axios2['default'].get('https://api.github.com/users/' + username + '/repos');
 	};
 
 	function getUserInfo(username) {
-	  return axios.get('https://api.github.com/users/' + username);
+	  return _axios2['default'].get('https://api.github.com/users/' + username);
 	}
 
 	var helpers = {
+	  //githubInfo: function(username) {}
 	  getGithubInfo: function getGithubInfo(username) {
-	    return axios.all([getRepos(username), getUserInfo(username)]).then(function (arr) {
+	    return _axios2['default'].all([getRepos(username), getUserInfo(username)]).then(function (arr) {
 	      return {
 	        repos: arr[0].data,
 	        bio: arr[1].data
@@ -24403,7 +24534,9 @@
 	  }
 	};
 
-	module.exports = helpers;
+	//module.exports = helpers;
+	exports['default'] = helpers;
+	module.exports = exports['default'];
 
 /***/ },
 /* 209 */
